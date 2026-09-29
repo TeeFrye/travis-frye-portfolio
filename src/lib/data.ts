@@ -1,6 +1,6 @@
 export const profile = {
   name: "Travis Frye",
-  tagline: "Product Manager building the AI-forward way — from roadmap to shipped outcomes.",
+  tagline: "Product Manager who loves building great products and experiences that solve real problems and deliver real value — for customers and users alike.",
   location: "Indianapolis, IN",
   email: "travisfrye317@gmail.com",
   linkedin: "https://www.linkedin.com/in/travfrye/",
