@@ -109,7 +109,7 @@ export const skillGroups = [
   },
   {
     title: "Tools & Platforms",
-    skills: ["Aha! Roadmaps", "Jira", "Confluence", "Pendo", "Amplitude", "SQL"],
+    skills: ["Aha! Roadmaps", "Jira", "Confluence", "Pendo", "Amplitude", "Figma", "Miro", "SQL"],
   },
   {
     title: "AI Tools",
