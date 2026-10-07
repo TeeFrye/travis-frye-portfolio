@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { profile } from "@/lib/data";
+import { GolfPutt } from "@/components/golf-putt";
 
 export function Hero() {
   return (
@@ -40,6 +41,7 @@ export function Hero() {
           />
         </div>
       </div>
+      <GolfPutt />
     </section>
   );
 }
