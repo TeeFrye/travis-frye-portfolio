@@ -6,9 +6,10 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/travfrye/",
   resumeUrl: "/TravisFryeResume.pdf",
   bio: [
-    "I'm a product manager with a decade of experience turning ambiguous problems into shipped outcomes — from insurance claims and live events to health intelligence and, now, agtech at IntelinAir.",
-    "I've owned roadmaps end-to-end, launched AI-powered features that outperformed third-party alternatives, and built the operating rhythm — KPI reporting, career ladders, release processes — that helps product teams scale.",
-    "I also build things myself. This site, and a full small-business website for a friend launching his own company, were both shipped with AI tools in the loop.",
+    "I'm a product manager with a decade of experience turning messy, ambiguous problems into shipped products. I've worked across insurance claims, live events, and health intelligence, and now I'm in agtech at IntelinAir.",
+    "I've owned roadmaps end to end, launched AI-powered features that outperformed the third-party tools they replaced, and built the operating rhythm that helps product teams scale: KPI reporting, career ladders, and release processes.",
+    "I also like building things myself. I made this site, plus a full website for a friend launching his own business, using AI tools along the way.",
+    "Outside of work, I'm a dad to three kids, which keeps me busy and humble. When I can sneak away, you'll probably find me on a golf course, chasing a better round than my last one. ⛳",
   ],
 };
 
