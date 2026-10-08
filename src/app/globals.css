@@ -44,6 +44,8 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchor targets clear of the sticky header */
+  scroll-padding-top: 4.5rem;
 }
 
 ::selection {

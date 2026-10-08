@@ -1,3 +1,4 @@
+import { MobileMenu } from "./mobile-menu";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
@@ -34,6 +35,7 @@ export function Nav() {
             Get in touch
           </a>
           <ThemeToggle />
+          <MobileMenu links={links} />
         </div>
       </div>
     </header>
