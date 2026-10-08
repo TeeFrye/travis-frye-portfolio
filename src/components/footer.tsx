@@ -1,4 +1,5 @@
 import { profile } from "@/lib/data";
+import { ExternalLink } from "./external-link";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -19,14 +20,12 @@ export function Footer() {
           >
             {profile.email}
           </a>
-          <a
+          <ExternalLink
             href={profile.linkedin}
-            target="_blank"
-            rel="noreferrer"
             className="rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
           >
             LinkedIn
-          </a>
+          </ExternalLink>
           <a
             href={profile.resumeUrl}
             download
