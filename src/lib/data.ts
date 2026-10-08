@@ -1,15 +1,17 @@
 export const profile = {
   name: "Travis Frye",
-  tagline: "Product Manager who loves building great products and experiences that solve real problems and deliver real value — for customers and users alike.",
+  tagline: "Product and program leader who gets up to speed fast in new domains, clears the path for teams, and turns complex work into results leadership can see.",
+  eyebrow: "Product · Program · Delivery",
   location: "Indianapolis, IN",
   email: "travisfrye317@gmail.com",
   linkedin: "https://www.linkedin.com/in/travfrye/",
   resumeUrl: "/TravisFryeResume.pdf",
+  industries: ["Auto & Disability Insurance", "Optometry Operations", "Health Analytics", "Specialty Care", "Event Tech", "AgTech"],
   bio: [
-    "I'm a product manager with a decade of experience turning messy, ambiguous problems into shipped products. I've worked across insurance claims, live events, and health intelligence, and now I'm in agtech at IntelinAir.",
-    "I've owned roadmaps end to end, launched AI-powered features that outperformed the third-party tools they replaced, and built the operating rhythm that helps product teams scale: KPI reporting, career ladders, and release processes.",
-    "I also like building things myself. I made this site, plus a full website for a friend launching his own business, using AI tools along the way.",
-    "Outside of work, I'm a dad to three kids, which keeps me busy and humble. When I can sneak away, you'll probably find me on a golf course, chasing a better round than my last one. ⛳",
+    "I've spent over a decade in product, program, and project roles, and the thread through all of it is delivery: turning messy, ambiguous problems into shipped work and making sure teams have what they need to move fast.",
+    "I started out adjusting auto and disability insurance claims, and I've since delivered in optometry operations, health analytics, specialty care, live events, and now agtech at IntelinAir. Every move meant learning a new domain quickly. I dig into the customer, the data, and the people who know the space, and I get productive fast. A new industry doesn't slow me down.",
+    "I'm a servant leader at heart. I absorb operational overhead so teams can focus on building. That means running Agile without the bloat, consolidating tools, and turning complex work into clear KPIs leadership can actually decide on.",
+    "I also like building things myself. I made this site, plus a full website for a friend launching his own business, using AI tools along the way. Outside of work, I'm a dad to three kids, which keeps me busy and humble, and when I can sneak away, you'll find me on a golf course chasing a better round than my last one. ⛳",
   ],
 };
 
@@ -104,7 +106,7 @@ export const skillGroups = [
       "Product Strategy & Vision",
       "Cross-functional Leadership",
       "Executive Stakeholder Communication",
-      "Agile / Scrum Facilitation",
+      "Program & Delivery Management",
       "KPI & Reporting Systems",
     ],
   },

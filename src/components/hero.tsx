@@ -8,12 +8,27 @@ export function Hero() {
       <div className="flex flex-col-reverse items-center gap-10 sm:flex-row sm:items-center sm:justify-between sm:gap-12">
         <div className="max-w-xl text-center sm:text-left">
           <p className="mb-3 text-sm font-medium text-accent">
-            Product Manager · {profile.location}
+            {profile.eyebrow} · {profile.location}
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             {profile.name}
           </h1>
           <p className="mt-4 text-lg text-muted">{profile.tagline}</p>
+          <div className="mt-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-muted">
+              Industries I&apos;ve delivered in
+            </p>
+            <ul className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
+              {profile.industries.map((industry) => (
+                <li
+                  key={industry}
+                  className="rounded-full border border-border bg-surface px-3 py-1 text-xs text-foreground/80"
+                >
+                  {industry}
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
             <a
               href={profile.resumeUrl}

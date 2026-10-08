@@ -14,14 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Travis Frye — Product Manager",
+  title: "Travis Frye — Product & Program Manager",
   description:
-    "Travis Frye is a Product Manager building the AI-forward way — from roadmap to shipped outcomes. Product portfolio and resume.",
+    "Travis Frye is a product and program leader who learns new domains fast, clears the path for teams, and delivers results. Portfolio and resume.",
   metadataBase: new URL("https://travisfrye.dev"),
   openGraph: {
-    title: "Travis Frye — Product Manager",
+    title: "Travis Frye — Product & Program Manager",
     description:
-      "Product Manager building the AI-forward way — from roadmap to shipped outcomes.",
+      "Product and program leader who learns new domains fast, clears the path for teams, and delivers results.",
     type: "website",
   },
 };
