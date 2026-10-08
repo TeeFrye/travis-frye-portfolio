@@ -50,7 +50,7 @@ export const featuredExperience: ExperienceEntry[] = [
     ],
   },
   {
-    company: "Cisco-Webex Events",
+    company: "Cisco-Webex Events (Socio)",
     location: "Indianapolis, IN",
     years: "2021 – 2024",
     blurb:
