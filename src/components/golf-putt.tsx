@@ -4,7 +4,7 @@ export function GolfPutt() {
   return (
     <svg
       viewBox="0 0 600 80"
-      className="golf-putt mt-14 ml-auto block w-full max-w-[600px] overflow-visible"
+      className="golf-putt block w-full overflow-visible"
       aria-hidden="true"
       focusable="false"
     >

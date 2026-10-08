@@ -52,7 +52,8 @@ html {
 }
 
 /* Hero golf putt: ball drops in, bounces once, rolls into the cup. */
-.golf-putt {
+.golf-putt,
+.putting-hint {
   --putt-duration: 3.3s;
   --putt-delay: 0.4s;
 }
@@ -89,6 +90,16 @@ html {
   98.5%, 100% { transform: translateY(16px); opacity: 1; }
 }
 
+/* Easter-egg hint fades in once the ball drops. */
+.putting-hint {
+  animation: putting-hint-in 0.6s calc(var(--putt-delay) + var(--putt-duration) + 0.3s) ease-out both;
+}
+
+@keyframes putting-hint-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
 @keyframes golf-flag {
   0%, 100% { transform: skewY(0deg); }
   30% { transform: skewY(-8deg); }
@@ -98,7 +109,8 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .golf-ball-x,
   .golf-ball-y,
-  .golf-flag {
+  .golf-flag,
+  .putting-hint {
     animation-duration: 1ms;
     animation-delay: 0s;
   }
