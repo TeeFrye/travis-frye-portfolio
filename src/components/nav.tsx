@@ -1,4 +1,5 @@
 import { MobileMenu } from "./mobile-menu";
+import { PlayGolfButton } from "./putting-green";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
@@ -26,6 +27,7 @@ export function Nav() {
               {link.label}
             </a>
           ))}
+          <PlayGolfButton className="cursor-pointer text-base leading-none transition-transform hover:scale-125" />
         </nav>
         <div className="flex items-center gap-3">
           <a

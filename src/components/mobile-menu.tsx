@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { openPuttingGame } from "./putting-green";
 
 type Link = { href: string; label: string };
 
@@ -70,6 +71,18 @@ export function MobileMenu({ links }: { links: Link[] }) {
                   </a>
                 </li>
               ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    openPuttingGame();
+                  }}
+                  className="block w-full py-3 text-left text-base text-foreground transition-colors hover:text-accent"
+                >
+                  ⛳ Play a round
+                </button>
+              </li>
             </ul>
             <div className="mx-auto max-w-5xl px-6 pb-5 sm:hidden">
               <a
