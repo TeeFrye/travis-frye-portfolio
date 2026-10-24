@@ -1,22 +1,23 @@
+import Link from "next/link";
 import { MobileMenu } from "./mobile-menu";
-import { PlayGolfButton } from "./putting-green";
+import { PlayGolfButton, PuttingGameHost } from "./putting-green";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#built-with", label: "How It's Built" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#built-with", label: "How It's Built" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="text-sm font-semibold tracking-tight">
+        <Link href="/#top" className="text-sm font-semibold tracking-tight">
           Travis Frye
-        </a>
+        </Link>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           {links.map((link) => (
             <a
@@ -40,6 +41,7 @@ export function Nav() {
           <MobileMenu links={links} />
         </div>
       </div>
+      <PuttingGameHost />
     </header>
   );
 }

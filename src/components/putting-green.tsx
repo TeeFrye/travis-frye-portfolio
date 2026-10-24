@@ -16,8 +16,8 @@ export function openPuttingGame() {
   window.dispatchEvent(new Event(OPEN_EVENT));
 }
 
-// Easter egg: the hero putt animation doubles as the button that opens a three-hole putting game.
-export function PuttingGreen() {
+// Mounted once in the nav so the game can open from any page.
+export function PuttingGameHost() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -26,11 +26,16 @@ export function PuttingGreen() {
     return () => window.removeEventListener(OPEN_EVENT, onOpen);
   }, []);
 
+  return open ? <PuttingGame onClose={() => setOpen(false)} /> : null;
+}
+
+// Easter egg: the hero putt animation doubles as the button that opens a three-hole putting game.
+export function PuttingGreen() {
   return (
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={openPuttingGame}
         aria-label="Play a three-hole putting game"
         title="Fancy a round?"
         className="mt-14 ml-auto block w-full max-w-[600px] cursor-pointer rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
@@ -40,7 +45,6 @@ export function PuttingGreen() {
       <p className="putting-hint mt-2 text-right font-mono text-xs text-muted">
         Fancy a round? Tap the green ⛳
       </p>
-      {open && <PuttingGame onClose={() => setOpen(false)} />}
     </>
   );
 }
