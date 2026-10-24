@@ -56,7 +56,7 @@ html {
 /* Hero golf putt: ball drops in, bounces once, rolls into the cup. */
 .golf-putt,
 .putting-hint {
-  --putt-duration: 3.3s;
+  --putt-duration: 4.2s;
   --putt-delay: 0.4s;
 }
 
@@ -75,21 +75,33 @@ html {
 }
 
 @keyframes golf-ball-x {
-  0% { transform: translateX(330px); animation-timing-function: linear; }
-  18.2% { transform: translateX(390px); animation-timing-function: linear; }
-  /* Roll: picks up the in-air speed and decelerates steadily (constant friction) into the cup */
-  34.8% { transform: translateX(440px); animation-timing-function: cubic-bezier(0.333, 0.45, 0.667, 0.783); }
-  89.4%, 100% { transform: translateX(560px); }
+  0% { transform: translateX(60px); animation-timing-function: linear; }
+  23.81% { transform: translateX(380px); animation-timing-function: cubic-bezier(0.333, 0.561, 0.667, 0.895); }
+  /* Long roll: picks up the in-air speed and decelerates steadily (constant friction) into the cup */
+  91.43%, 100% { transform: translateX(920px); }
 }
 
 @keyframes golf-ball-y {
   0% { transform: translateY(-70px); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0, 0.9, 0.6); }
-  4.5% { opacity: 1; }
-  18.2% { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.6, 0.4, 1); }
-  26.5% { transform: translateY(-18px); animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.4); }
-  34.8% { transform: translateY(0); animation-timing-function: linear; }
-  89% { transform: translateY(0); animation-timing-function: cubic-bezier(0.5, 0, 1, 1); }
-  98.5%, 100% { transform: translateY(16px); opacity: 1; }
+  3.57% { opacity: 1; }
+  11.9% { transform: translateY(0); animation-timing-function: cubic-bezier(0.2, 0.6, 0.4, 1); }
+  17.86% { transform: translateY(-18px); animation-timing-function: cubic-bezier(0.6, 0, 0.8, 0.4); }
+  23.81% { transform: translateY(0); animation-timing-function: linear; }
+  90.95% { transform: translateY(0); animation-timing-function: cubic-bezier(0.5, 0, 1, 1); }
+  98.33%, 100% { transform: translateY(16px); opacity: 1; }
+}
+
+/* Phones only see the right end of the green, so the ball drops in closer to the cup. */
+@media (max-width: 639px) {
+  .golf-ball-x {
+    animation-name: golf-ball-x-sm;
+  }
+}
+
+@keyframes golf-ball-x-sm {
+  0% { transform: translateX(645px); animation-timing-function: linear; }
+  23.81% { transform: translateX(745px); animation-timing-function: cubic-bezier(0.333, 0.541, 0.667, 0.876); }
+  91.43%, 100% { transform: translateX(920px); }
 }
 
 /* Easter-egg hint fades in once the ball drops. */

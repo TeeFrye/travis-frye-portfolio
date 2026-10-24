@@ -38,7 +38,7 @@ export function PuttingGreen() {
         onClick={openPuttingGame}
         aria-label="Play a three-hole putting game"
         title="Fancy a round?"
-        className="mt-14 ml-auto block w-full max-w-[600px] cursor-pointer rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+        className="mt-14 block w-full cursor-pointer overflow-x-clip rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
       >
         <GolfPutt />
       </button>
