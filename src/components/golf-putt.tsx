@@ -35,8 +35,8 @@ export function GolfPutt() {
       <rect x="910" y="70" width="20" height="9" rx="2" fill="var(--border)" />
 
       {/* Flag */}
-      <line x1="920" y1="18" x2="920" y2="70" stroke="var(--muted)" strokeWidth="1.5" />
-      <path className="golf-flag" d="M920 18 L942 24 L920 30 Z" fill="var(--accent)" />
+      <line x1="920" y1="2" x2="920" y2="70" stroke="var(--muted)" strokeWidth="1.5" />
+      <path className="golf-flag" d="M920 2 L944 9 L920 16 Z" fill="var(--flag)" />
 
       {/* Ball: outer group moves horizontally, inner group handles the vertical bounce */}
       <g clipPath="url(#golf-ball-clip)">

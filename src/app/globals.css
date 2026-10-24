@@ -11,6 +11,7 @@
   --accent: #0f766e;
   --accent-foreground: #ffffff;
   --accent-soft: #ecf5f3;
+  --flag: #dc2626;
 }
 
 .dark {
@@ -22,6 +23,7 @@
   --accent: #2dd4bf;
   --accent-foreground: #04201c;
   --accent-soft: #102622;
+  --flag: #f87171;
 }
 
 @theme inline {
