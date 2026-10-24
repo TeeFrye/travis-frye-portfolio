@@ -148,12 +148,12 @@ export const projects: Project[] = [
     title: "Family Week Ahead",
     tag: "Personal Project · AI Agent",
     summary:
-      "A scheduled AI agent that reconciles my family's scattered schedule sources (a paper calendar, league feeds, school apps) and emails a Sunday briefing with one-tap links to add what's missing. It started as the wrong problem, and discovery fixed that.",
+      "A scheduled AI agent that reconciles my family's scattered schedule sources (a paper calendar, league feeds, school apps) and emails a Sunday briefing with one-tap links to add what's missing, giving my wife and me a digital calendar we can both trust. It started as the wrong problem, and discovery fixed that.",
     url: "https://github.com/TeeFrye/family-week-ahead",
     linkLabel: "View on GitHub",
     caseStudy: {
       lede:
-        "A scheduled AI agent that reconciles a family's scattered schedule sources and emails a Sunday-morning \"Week Ahead\" briefing, with one-tap links to add anything missing to the shared calendar. Built in public, with the product thinking documented as carefully as the code.",
+        "A scheduled AI agent that reconciles a family's scattered schedule sources and emails a Sunday-morning \"Week Ahead\" briefing, with one-tap links to add anything missing to the shared calendar. The goal: a digital calendar my wife and I can both trust and easily add to. Built in public, with the product thinking documented as carefully as the code.",
       facts: [
         { label: "Role", value: "Product owner, researcher, and builder" },
         { label: "Timeline", value: "March 2026 – present" },
@@ -164,8 +164,9 @@ export const projects: Project[] = [
         {
           heading: "The problem, twice",
           paragraphs: [
-            "Our family's schedule runs on a handwritten calendar in the kitchen. The first plan (v1, March 2026) was simple: photograph it and have AI turn it into Google Calendar events.",
-            "Before automating anything, I interviewed my user (my wife) and looked at the real data. The problem turned out to be bigger than one calendar, and most of my starting assumptions were wrong.",
+            "Our family's schedule runs on a handwritten calendar in the kitchen. My wife keeps it, and it's our source of truth. But we'd both long wanted a digital calendar too: one we could check from anywhere, trust to be complete, and add to without friction.",
+            "The first plan (v1, March 2026) was simple: photograph the paper calendar and have AI turn it into Google Calendar events.",
+            "Before automating anything, I interviewed my other user (my wife) and looked at the real data. The problem turned out to be bigger than one calendar, and most of my starting assumptions were wrong.",
           ],
           table: {
             columns: ["What I assumed (v1)", "What was actually true (v2)"],
@@ -198,7 +199,7 @@ export const projects: Project[] = [
           table: {
             columns: ["Decision", "Why"],
             rows: [
-              ["Propose, don't write", "A bad read should never put junk on the calendar my wife relies on. One tap to accept keeps us in control."],
+              ["Propose, don't write", "A bad read should never put junk on a calendar we both need to trust. One tap to accept keeps us in control."],
               ["One capture inbox instead of per-app integrations", "ClassDojo and GroupMe have no usable integration. One habit (\"if you see it, send it to the Family Inbox\") covers them, plus flyers and texts, with no API work or terms-of-service risk."],
               ["Read feeds directly, don't subscribe", "Google refreshes subscribed feeds slowly. Reading them lets the agent detect changes through stable game IDs."],
               ["Images → Drive, text → Gmail", "Tested: the Gmail connector can't read attachments, and Drive OCRs screenshots cleanly."],
