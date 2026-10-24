@@ -148,7 +148,7 @@ export const projects: Project[] = [
     title: "Family Week Ahead",
     tag: "Personal Project · AI Agent",
     summary:
-      "A scheduled AI agent that reconciles my family's scattered schedule sources (a paper calendar, league feeds, school apps) and emails a Sunday briefing with one-tap links to add what's missing, giving my wife and me a digital calendar we can both trust. It started as the wrong problem, and discovery fixed that.",
+      "A scheduled AI agent that reconciles my family's scattered schedule sources (a paper calendar, league feeds, ClassDojo, school emails) and emails a Sunday briefing with one-tap links to add what's missing, giving my wife and me a digital calendar we can both trust. It started as the wrong problem, and discovery fixed that.",
     url: "https://github.com/TeeFrye/family-week-ahead",
     linkLabel: "View on GitHub",
     caseStudy: {
@@ -173,7 +173,7 @@ export const projects: Project[] = [
             rows: [
               ["The gap is paper → digital", "The gap is five or more sources that never get cross-checked"],
               ["It's my problem", "We both miss things: spirit days, tests, schedule changes"],
-              ["School info arrives by email", "Almost none does. It lives in ClassDojo notifications and GroupMe"],
+              ["School info arrives by email", "Some does, but most of it lives in ClassDojo notifications and GroupMe"],
               ["Sports schedules need to be read off the wall", "The league publishes iCal feeds: structured data, no AI needed"],
               ["Sync events automatically", "We want to review before anything lands on the shared calendar"],
               ["The output is a calendar", "The output is a weekly briefing. The calendar is one place it can write to."],
@@ -185,7 +185,7 @@ export const projects: Project[] = [
         {
           heading: "What it does",
           paragraphs: [
-            "Every Sunday morning a cloud agent reads every source (the kitchen calendar photo, league iCal feeds, a shared Family Inbox in Drive and Gmail, and last week's saved state), compares them against our shared Google calendar, and emails a briefing to both of us. It proposes, and we decide.",
+            "Every Sunday morning a cloud agent reads every source (the kitchen calendar photo, league iCal feeds, a shared Family Inbox in Drive and Gmail where ClassDojo posts, school emails, and GroupMe messages land, and last week's saved state), compares them against our shared Google calendar, and emails a briefing to both of us. It proposes, and we decide.",
           ],
           items: [
             { label: "🔎 Call-outs", detail: "Double-bookings, handoffs under 45 minutes, games that moved or vanished from the feed, crossed-out paper entries still on Google, practices during school breaks, unknown abbreviations, and a reminder when the kitchen photo is stale." },
