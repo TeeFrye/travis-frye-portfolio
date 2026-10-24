@@ -6,7 +6,8 @@ Live site: [travisfrye.dev](https://travisfrye.dev)
 
 ## Features
 
-- Single-page layout: hero, about, experience, projects, and "how this site was built"
+- Home page with hero, about, experience, projects, and "how this site was built"
+- A case-study page for each project (`/projects/<slug>`), generated at build time
 - Light/dark theme toggle (follows system preference, remembered across visits)
 - Responsive nav with a mobile menu
 - Downloadable resume PDF
@@ -24,13 +25,16 @@ Live site: [travisfrye.dev](https://travisfrye.dev)
 
 ```
 src/
-  app/          # layout, page, global styles, icons
+  app/          # layout, home page, global styles, icons
+    projects/[slug]/  # case-study page, one per project
   components/   # one file per section/UI piece (hero, nav, experience, putting game, …)
   lib/data.ts   # all site content: profile, experience, projects, build process
 public/         # headshot and resume PDF
 ```
 
 To update content, edit `src/lib/data.ts`. Most changes don't require touching components.
+
+To add a project, add an entry to `projects` in `src/lib/data.ts` with a unique `slug`. It gets a card on the home page and its own case-study page automatically.
 
 ## How this was built
 
