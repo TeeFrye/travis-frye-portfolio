@@ -275,7 +275,7 @@ export const projects: Project[] = [
           items: [
             { label: "Coming-soon gate", detail: "Live at mjcustomclubs.com two months ahead of opening, so the business was findable and credible long before the doors opened." },
             { label: "The full site", detail: "Home, About, Services, Pricing, and Contact pages, with fitting packages and a Founders Club offer. Built underneath the gate, then switched on ahead of the soft opening." },
-            { label: "Launch basics", detail: "Custom domain, canonical URLs, sitemap, robots rules, social previews, and web analytics." },
+            { label: "Launch basics", detail: "Custom domain, search engine setup so the shop shows up on Google, social media link previews, and web analytics." },
             { label: "A handoff he can maintain", detail: "A plain-language README that maps \"what you want to change\" to the file it lives in, plus how to preview a change and roll back a bad deploy." },
           ],
         },
