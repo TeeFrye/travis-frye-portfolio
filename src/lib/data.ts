@@ -244,44 +244,62 @@ export const projects: Project[] = [
     title: "MJ Custom Clubs",
     tag: "Client Project",
     summary:
-      "A friend was opening a custom golf club fitting shop and was stuck standing up a site himself. I built and launched the full site, with a coming-soon gate live now and the rest of the site built underneath, ready to flip on.",
+      "A friend was opening a custom golf club fitting shop and was stuck standing up a site himself. I built the site to his design and had it live two months before the doors opened, early enough to help him bring manufacturers like Mizuno and TaylorMade on board.",
     url: "https://mjcustomclubs.com/",
     linkLabel: "View live site",
     caseStudy: {
       lede:
-        "A friend was striking out on his own, opening a custom golf club fitting shop this November, and was stuck trying to stand up a site himself. I built and launched the full site so he could focus on opening the shop.",
+        "A friend was striking out on his own, opening a custom golf club fitting shop in November 2026, and was stuck trying to stand up a site himself. He drove the design and layout; I built and launched it two months before opening day so he could focus on the shop, and the site ended up helping him land equipment manufacturers for his lineup.",
       facts: [
         { label: "Role", value: "Builder and launch owner" },
         { label: "Client", value: "MJ Custom Clubs, Indianapolis" },
         { label: "Built with", value: "Claude Code · Next.js · Tailwind CSS · Vercel" },
-        { label: "Status", value: "Coming-soon gate live; full site ready to launch" },
+        { label: "Status", value: "Full site live; shop soft-opens November 2026" },
       ],
       sections: [
         {
           heading: "The ask",
           paragraphs: [
-            "He needed a credible web presence before opening day: something customers could find now, plus a full site with services, pricing, and booking ready the moment the doors opened.",
+            "He needed a credible web presence before opening day: something customers could find now, plus a full site with services and pricing ready the moment the doors opened.",
           ],
         },
         {
           heading: "Who owned what",
           paragraphs: [
-            "Design and content decisions were his. Execution, build, and launch were mine. Keeping that line clear meant he never had to think about code, and I never had to guess what his brand should say.",
+            "The design, layout, and content were his. He decided how the site should look, how the pages flowed, and what it should say. My job was to turn that direction into a working site: execution, build, and launch.",
+            "Keeping that line clear meant he never had to think about code, and I never had to guess what his brand should be. The site reflects how he wants his customers to see the business.",
           ],
         },
         {
           heading: "What I shipped",
           items: [
-            { label: "Coming-soon gate", detail: "Live now at mjcustomclubs.com, so the business is findable before launch." },
-            { label: "The full site, built underneath", detail: "Home, About, Services, Pricing, and Contact pages, with fitting packages and a Founders Club offer, ready to switch on." },
+            { label: "Coming-soon gate", detail: "Live at mjcustomclubs.com two months ahead of opening, so the business was findable and credible long before the doors opened." },
+            { label: "The full site", detail: "Home, About, Services, Pricing, and Contact pages, with fitting packages and a Founders Club offer. Built underneath the gate, then switched on ahead of the soft opening." },
             { label: "Launch basics", detail: "Custom domain, canonical URLs, sitemap, robots rules, social previews, and web analytics." },
             { label: "A handoff he can maintain", detail: "A plain-language README that maps \"what you want to change\" to the file it lives in, plus how to preview a change and roll back a bad deploy." },
           ],
         },
         {
+          heading: "The impact",
+          paragraphs: [
+            "Having the site live two months before the physical store opened its doors mattered more than either of us expected. While he was pitching equipment manufacturers to carry their lines, including Mizuno, TaylorMade, and others, the site gave him another layer of proof that the business was real and serious.",
+            "He told me it helped him move quicker with those manufacturers. A new shop with no storefront yet is an easier yes when there's a polished, professional site to point to.",
+            "It also built early demand. During the coming-soon stretch, golfers could already find the shop, see the Founders Club offer, and reach out about it before opening day. He said that early interest was crucial during the startup phase.",
+          ],
+          callout:
+            "The site was working before the doors opened: earning credibility with the brands he needed on his shelves, and building a list of Founders Club prospects.",
+        },
+        {
+          heading: "What's next",
+          paragraphs: [
+            "Launch was the starting line, not the finish. He wants to grow the site iteratively alongside the business, adding features as the shop's needs become clear instead of guessing at everything up front.",
+            "Online booking and fitting scheduling are next in the works, with more to follow. I'm staying on to support him as the shop scales: shipping in small steps, learning from how customers actually use the site, and building what earns its place.",
+          ],
+        },
+        {
           heading: "Why it matters",
           paragraphs: [
-            "It's a small project with a real customer, a hard date, and someone else's business on the line. The same skills I use at work applied here: get clear on who decides what, ship something useful early, and leave the owner able to run it without me.",
+            "It's a small project with a real customer, a hard date, and someone else's business on the line. The same skills I use at work applied here: get clear on who decides what, ship something useful early, leave the owner able to run day-to-day changes himself, and keep iterating as the business grows.",
           ],
         },
       ],
