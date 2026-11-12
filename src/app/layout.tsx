@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { siteUrl } from "@/lib/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   title: "Travis Frye — Product & Program Manager",
   description:
     "Travis Frye is a product and program leader who learns new domains fast, clears the path for teams, and delivers results. Portfolio and resume.",
-  metadataBase: new URL("https://travis-frye-portfolio.vercel.app"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Travis Frye — Product & Program Manager",
     description:

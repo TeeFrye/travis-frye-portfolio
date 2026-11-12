@@ -10,7 +10,7 @@ This is Travis Frye's job-search portfolio. The readers are hiring managers and 
 
 ## Where things live
 
-- **Live site:** https://travis-frye-portfolio.vercel.app. Every push to `main` deploys to production on Vercel. `travisfrye.dev` is not registered; don't link to it unless the domain is bought and connected.
+- **Live site:** https://www.travisfrye.dev (the bare `travisfrye.dev` redirects to `www`; `travis-frye-portfolio.vercel.app` also still serves it). Every push to `main` deploys to production on Vercel. The canonical URL is `siteUrl` in `src/lib/data.ts`, used by metadata, the sitemap, and robots.
 - **Content:** nearly all copy is in `src/lib/data.ts` (profile, experience, skills, projects, build process). Prefer editing data over components.
 - **Case studies:** `projects[].caseStudy.sections[]` render in `src/app/projects/[slug]/page.tsx`. A section can have `paragraphs`, `items`, `table`, `image` (`src`, `alt`, `width`, `height`, optional `caption`), and `callout` (labeled "Problem statement" unless `calloutLabel` is set).
 - **Resume PDF:** `public/TravisFryeResume.pdf` should match the experience in `data.ts`. The phone number was removed on purpose; don't add it back.
@@ -33,5 +33,6 @@ This is Travis Frye's job-search portfolio. The readers are hiring managers and 
 
 - Preview changes locally with `npm run dev` (http://localhost:3000). Travis reviews there; commit and push only after he approves, since a push goes live.
 - Verify with `npx next build`. It also generates the route types (`PageProps`, `LayoutProps`) that a bare `tsc` needs.
-- Known lint errors predate recent work: an unescaped apostrophe in `src/components/built-with.tsx` and setState-in-effect in `src/components/theme-toggle.tsx`. They don't block the build.
+- `npm run lint` should pass clean; keep it that way.
+- Social preview cards (LinkedIn, Slack) are generated from `src/lib/og-card.tsx` for the home page and each case study. `src/app/sitemap.ts` and `src/app/robots.ts` list pages for search engines; new projects are picked up automatically. If the domain changes, update `siteUrl`, the domain text in `og-card.tsx`, and the README.
 - The repo sits in an iCloud-synced folder. If `next dev`, `tsc`, or `next build` hangs with no output, files have likely been offloaded: check with `find node_modules -flags +dataless`, and fix with `rm -rf .next node_modules && npm install`.

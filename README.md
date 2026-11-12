@@ -2,7 +2,7 @@
 
 The source for my portfolio site: who I am, where I've delivered, and case studies of things I've built.
 
-**Live site:** [travis-frye-portfolio.vercel.app](https://travis-frye-portfolio.vercel.app)
+**Live site:** [travisfrye.dev](https://www.travisfrye.dev)
 
 I've spent over a decade in product, program, and project roles across insurance, optometry, health analytics, specialty care, event tech, and agtech. This site is part of the pitch: I planned it, wrote it, and built it with Claude Code, and it ships through the same Git → GitHub → Vercel pipeline a product team would use.
 
@@ -10,9 +10,9 @@ I've spent over a decade in product, program, and project roles across insurance
 
 | Project | What it shows |
 | --- | --- |
-| [Family Week Ahead](https://travis-frye-portfolio.vercel.app/projects/family-week-ahead) | Discovery that reframed the problem, an AI agent running live every Sunday, and results from real weekly briefings. Source: [TeeFrye/family-week-ahead](https://github.com/TeeFrye/family-week-ahead) |
-| [MJ Custom Clubs](https://travis-frye-portfolio.vercel.app/projects/mj-custom-clubs) | A real client, a hard launch date, and a site live two months before the shop opened, which helped land equipment manufacturers |
-| [This Portfolio Site](https://travis-frye-portfolio.vercel.app/projects/this-portfolio) | How I use AI tools day to day: as leverage, not autopilot |
+| [Family Week Ahead](https://www.travisfrye.dev/projects/family-week-ahead) | Discovery that reframed the problem, an AI agent running live every Sunday, and results from real weekly briefings. Source: [TeeFrye/family-week-ahead](https://github.com/TeeFrye/family-week-ahead) |
+| [MJ Custom Clubs](https://www.travisfrye.dev/projects/mj-custom-clubs) | A real client, a hard launch date, and a site live two months before the shop opened, which helped land equipment manufacturers |
+| [This Portfolio Site](https://www.travisfrye.dev/projects/this-portfolio) | How I use AI tools day to day: as leverage, not autopilot |
 
 ## Features
 
@@ -47,7 +47,7 @@ public/
 
 To update content, edit `src/lib/data.ts`. Most changes don't require touching components.
 
-To add a project, add an entry to `projects` in `src/lib/data.ts` with a unique `slug`. It gets a card on the home page and its own case-study page automatically. Each case-study section can include `paragraphs`, `items`, a two-column `table`, an `image` (with `width`, `height`, `alt`, and an optional `caption`), and a `callout` (labeled "Problem statement" unless `calloutLabel` says otherwise).
+To add a project, add an entry to `projects` in `src/lib/data.ts` with a unique `slug` and a short `shareSummary` for its link preview card. It gets a card on the home page and its own case-study page automatically. Each case-study section can include `paragraphs`, `items`, a two-column `table`, an `image` (with `width`, `height`, `alt`, and an optional `caption`), and a `callout` (labeled "Problem statement" unless `calloutLabel` says otherwise).
 
 Screenshots of real data (emails, calendars) are redacted before they're committed: names, schools, locations, and email headers are blurred or cropped out.
 

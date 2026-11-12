@@ -9,7 +9,7 @@ export function BuiltWith() {
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/90">
         This site is part of the pitch. I planned the content and structure, then
         used Claude Code to build it — reviewing and directing every step from
-        scaffold to deploy. It's a working example of how I use AI tools day to
+        scaffold to deploy. It&apos;s a working example of how I use AI tools day to
         day: as leverage, not autopilot.
       </p>
 

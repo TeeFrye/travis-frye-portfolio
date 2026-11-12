@@ -1,3 +1,6 @@
+/** Canonical site URL, used for metadata, the sitemap, and preview cards. */
+export const siteUrl = "https://www.travisfrye.dev";
+
 export const profile = {
   name: "Travis Frye",
   tagline: "Product and program leader who gets up to speed fast in new domains, clears the path for teams, and turns complex work into results leadership can see.",
@@ -11,7 +14,7 @@ export const profile = {
     "I've spent over a decade in product, program, and project roles, and the thread through all of it is delivery: turning messy, ambiguous problems into shipped work and making sure teams have what they need to move fast.",
     "I started out adjusting auto and disability insurance claims, and I've since delivered in optometry operations, health analytics, specialty care, live events, and now agtech at IntelinAir. Every move meant learning a new domain quickly. I dig into the customer, the data, and the people who know the space, and I get productive fast. A new industry doesn't slow me down.",
     "I'm a servant leader at heart. I absorb operational overhead so teams can focus on building. That means running Agile without the bloat, consolidating tools, and turning complex work into clear KPIs leadership can actually decide on.",
-    "I also like building things myself. I made this site, plus a full website for a friend launching his own business, using AI tools along the way. Outside of work, I'm a dad to three kids, which keeps me busy and humble, and when I can sneak away, you'll find me on a golf course chasing a better round than my last one. ⛳",
+    "I also like building things myself. Using AI tools, I built this site, a full website for a friend launching his own business, and an AI agent that sends my family a schedule briefing every Sunday morning. Outside of work, I'm a dad to three kids, which keeps me busy and humble, and when I can sneak away, you'll find me on a golf course chasing a better round than my last one. ⛳",
   ],
 };
 
@@ -61,7 +64,7 @@ export const featuredExperience: ExperienceEntry[] = [
     ],
     highlights: [
       "Implemented collaboration tools for Speaker and Sponsor management, driving 5 customer renewals within 7 days of launch and 3,000+ collaborations in the first 2 months.",
-      "Introduced Privacy and Compliance settings for attendee data, unlocking an additional $1,061,062.50 in Enterprise revenue, exceeding targets.",
+      "Introduced Privacy and Compliance settings for attendee data, unlocking $1M+ in additional Enterprise revenue, exceeding targets.",
       "Designed a custom Lobby feature centralizing event information for planners, reaching 78% adoption within 6 months.",
       "Developed embeddable content widgets adopted by 75%+ of small-medium events within 6 months, reducing content duplication.",
       "Integrated AI-powered closed captions and translations into all video content, achieving 94% adoption within 6 months — outperforming third-party add-ons.",
@@ -116,7 +119,7 @@ export const skillGroups = [
   },
   {
     title: "AI Tools",
-    skills: ["Claude Code", "ChatGPT", "Cursor"],
+    skills: ["Claude Code", "AI Agents", "Prompt Design", "ChatGPT", "Cursor"],
   },
 ];
 
@@ -135,6 +138,8 @@ export type Project = {
   title: string;
   tag: string;
   summary: string;
+  /** One or two short sentences for the social preview card. */
+  shareSummary: string;
   url: string;
   linkLabel: string;
   caseStudy: {
@@ -151,6 +156,8 @@ export const projects: Project[] = [
     tag: "Personal Project · AI Agent",
     summary:
       "A scheduled AI agent that reconciles my family's scattered schedule sources (a paper calendar, league feeds, ClassDojo, school emails) and emails a Sunday briefing with one-tap links to add what's missing, giving my wife and me a digital calendar we can both trust. It started as the wrong problem, and discovery fixed that.",
+    shareSummary:
+      "An AI agent that reconciles my family's scattered schedules and emails us a Sunday briefing. Live every week since October 2026.",
     url: "https://github.com/TeeFrye/family-week-ahead",
     linkLabel: "View on GitHub",
     caseStudy: {
@@ -275,6 +282,8 @@ export const projects: Project[] = [
     tag: "Client Project",
     summary:
       "A friend was opening a custom golf club fitting shop and was stuck standing up a site himself. I built the site to his design and had it live two months before the doors opened, early enough to help him bring manufacturers like Mizuno and TaylorMade on board.",
+    shareSummary:
+      "A friend's golf fitting shop, online two months before opening day. The site helped him land manufacturers like Mizuno and TaylorMade.",
     url: "https://mjcustomclubs.com/",
     linkLabel: "View live site",
     caseStudy: {
@@ -341,6 +350,8 @@ export const projects: Project[] = [
     tag: "Personal Project",
     summary:
       "Planned, built, and deployed with Claude Code, from resume content to a working Next.js site, version-controlled on GitHub and shipped to Vercel.",
+    shareSummary:
+      "Planned, built, and deployed with Claude Code, from resume content to a live Next.js site on Vercel.",
     url: "https://github.com/TeeFrye/travis-frye-portfolio",
     linkLabel: "View source",
     caseStudy: {

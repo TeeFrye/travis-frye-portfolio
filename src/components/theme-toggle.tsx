@@ -1,24 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+// The theme lives on <html class="dark">, set before paint by the inline script in layout.tsx.
+function subscribe(onChange: () => void) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+
+const getIsDark = () => document.documentElement.classList.contains("dark");
+const getServerIsDark = () => null;
 
 export function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    setIsDark(document.documentElement.classList.contains("dark"));
-  }, []);
+  // null during server render and hydration, so the placeholder matches.
+  const isDark = useSyncExternalStore(subscribe, getIsDark, getServerIsDark);
 
   function toggle() {
     const next = !isDark;
-    setIsDark(next);
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
   }
 
-  if (!mounted) {
+  if (isDark === null) {
     return <div className="h-9 w-9" aria-hidden="true" />;
   }
 
