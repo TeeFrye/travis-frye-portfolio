@@ -345,6 +345,65 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "travis-101",
+    title: "Travis 101",
+    tag: "Personal Project · Built with Claude",
+    summary:
+      "A personal operating manual built from my own Kolbe A and DISC assessment results. It shows teammates and managers how I take action, how I communicate, where I thrive, and where my blind spots are, with what to do about each.",
+    shareSummary:
+      "How I work, built from my own Kolbe A and DISC results: strengths, blind spots, and how to get the best from me.",
+    url: "https://teefrye.github.io/Working-with-Travis-101/",
+    linkLabel: "Open Travis 101",
+    caseStudy: {
+      lede:
+        "A personal operating manual for teammates, managers, and collaborators. It's built from Kolbe A and DISC assessments I've taken, and it explains how I take action, how I communicate, where I thrive, and where I have blind spots. If you're deciding whether to work with me, it's the shortcut.",
+      facts: [
+        { label: "Role", value: "Author and builder" },
+        { label: "Timeline", value: "March 2026, updated May 2026" },
+        { label: "Built with", value: "Claude · React · GitHub Pages" },
+        { label: "Based on", value: "My Kolbe A Index and DISC assessment results" },
+      ],
+      sections: [
+        {
+          heading: "My results",
+          paragraphs: [
+            "Kolbe measures natural instincts: how a person takes action, not personality or intelligence. DISC measures how a person communicates and responds to their environment. Together they explain a lot about how I work.",
+          ],
+          table: {
+            columns: ["Result", "What it means in practice"],
+            rows: [
+              ["Kolbe Follow Thru 8", "My strongest mode. I build systems, establish order, and see things through."],
+              ["Kolbe Fact Finder 7", "I gather context before acting, not to stall, but to move with confidence."],
+              ["Kolbe Implementor 3", "I work in ideas, systems, and frameworks rather than physical prototypes."],
+              ["Kolbe Quick Start 2", "I prefer a plan over a pivot. Constant improvisation drains me."],
+              ["DISC Supporter (S)", "I build trust through consistency, listen closely, and keep a team steady under pressure."],
+            ],
+          },
+        },
+        {
+          heading: "What's inside",
+          items: [
+            { label: "Strengths", detail: "Follow Thru 8 plus DISC S is a rare combination: I care about the quality of the relationship and the quality of the deliverable." },
+            { label: "Blind spots, with antidotes", detail: "Each strength has a shadow. I can overcommit to keep things smooth, so the antidote is \"let me check what I'm already carrying.\" I can over-research, so I set a \"good enough to move\" bar before starting." },
+            { label: "A user manual", detail: "Tabs for projects, feedback, disagreement, and meetings. For example: send me pre-reads, and I'll arrive having done the homework." },
+            { label: "The Decoder", detail: "Common behaviors and what they actually mean. Quiet in a meeting means I'm processing, not checked out, and the real thinking comes out in a 1:1 afterward." },
+            { label: "Cheat sheet", detail: "What energizes me and what drains me, on one screen." },
+          ],
+        },
+        {
+          heading: "Why I built it",
+          paragraphs: [
+            "Two honest reasons: to get comfortable with AI-assisted development, and to get back into GitHub and shipping something to the web. I built it entirely through conversation with Claude, with no manual coding, and published it on GitHub Pages. The repo shares the starting prompt so anyone can build their own.",
+            "Self-awareness is easy to claim in an interview and hard to show. This puts my strengths and blind spots in writing, along with what I do about each one.",
+          ],
+          calloutLabel: "The short version",
+          callout:
+            "Give me a complex, under-documented problem and the context around it. I'll build the system that solves it and see it through.",
+        },
+      ],
+    },
+  },
+  {
     slug: "this-portfolio",
     title: "This Portfolio Site",
     tag: "Personal Project",

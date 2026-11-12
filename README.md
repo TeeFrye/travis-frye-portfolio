@@ -12,6 +12,7 @@ I've spent over a decade in product, program, and project roles across insurance
 | --- | --- |
 | [Family Week Ahead](https://www.travisfrye.dev/projects/family-week-ahead) | Discovery that reframed the problem, an AI agent running live every Sunday, and results from real weekly briefings. Source: [TeeFrye/family-week-ahead](https://github.com/TeeFrye/family-week-ahead) |
 | [MJ Custom Clubs](https://www.travisfrye.dev/projects/mj-custom-clubs) | A real client, a hard launch date, and a site live two months before the shop opened, which helped land equipment manufacturers |
+| [Travis 101](https://www.travisfrye.dev/projects/travis-101) | How I work, from my own Kolbe A and DISC results: strengths, blind spots, and how to get the best from me. Live: [Working-with-Travis-101](https://teefrye.github.io/Working-with-Travis-101/) |
 | [This Portfolio Site](https://www.travisfrye.dev/projects/this-portfolio) | How I use AI tools day to day: as leverage, not autopilot |
 
 ## Features
