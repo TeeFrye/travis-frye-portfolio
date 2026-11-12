@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Travis Frye — Product & Program Manager",
   description:
     "Travis Frye is a product and program leader who learns new domains fast, clears the path for teams, and delivers results. Portfolio and resume.",
-  metadataBase: new URL("https://travisfrye.dev"),
+  metadataBase: new URL("https://travis-frye-portfolio.vercel.app"),
   openGraph: {
     title: "Travis Frye — Product & Program Manager",
     description:
