@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
@@ -117,6 +118,26 @@ function Section({ section }: { section: CaseStudySection }) {
         </p>
       ))}
 
+      {section.image && (
+        <figure className="mt-6">
+          <div className="overflow-hidden rounded-2xl border border-border bg-white p-3 sm:p-5">
+            <Image
+              src={section.image.src}
+              alt={section.image.alt}
+              width={section.image.width}
+              height={section.image.height}
+              sizes="(min-width: 768px) 720px, 100vw"
+              className="h-auto w-full"
+            />
+          </div>
+          {section.image.caption && (
+            <figcaption className="mt-3 text-center text-xs text-muted">
+              {section.image.caption}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
       {section.table && (
         <div className="mt-6 overflow-hidden rounded-2xl border border-border">
           <table className="w-full text-left text-sm">
@@ -159,7 +180,7 @@ function Section({ section }: { section: CaseStudySection }) {
       {section.callout && (
         <blockquote className="mt-6 rounded-2xl bg-accent-soft p-6 text-base leading-relaxed text-foreground/90">
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">
-            Problem statement
+            {section.calloutLabel ?? "Problem statement"}
           </p>
           {section.callout}
         </blockquote>

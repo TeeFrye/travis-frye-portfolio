@@ -126,6 +126,8 @@ export type CaseStudySection = {
   items?: { label: string; detail: string }[];
   table?: { columns: [string, string]; rows: [string, string][] };
   callout?: string;
+  calloutLabel?: string;
+  image?: { src: string; alt: string; width: number; height: number; caption?: string };
 };
 
 export type Project = {
@@ -158,7 +160,7 @@ export const projects: Project[] = [
         { label: "Role", value: "Product owner, researcher, and builder" },
         { label: "Timeline", value: "March 2026 – present" },
         { label: "Built with", value: "Claude scheduled agent · Google Calendar, Gmail & Drive · iCal feeds" },
-        { label: "Status", value: "Running live every Sunday" },
+        { label: "Status", value: "Live since Oct 25, 2026 · runs every Sunday morning" },
       ],
       sections: [
         {
@@ -188,11 +190,34 @@ export const projects: Project[] = [
             "Every Sunday morning a cloud agent reads every source (the kitchen calendar photo, league iCal feeds, a shared Family Inbox in Drive and Gmail where ClassDojo posts, school emails, and GroupMe messages land, and last week's saved state), compares them against our shared Google calendar, and emails a briefing to both of us. It proposes, and we decide.",
           ],
           items: [
-            { label: "🔎 Call-outs", detail: "Double-bookings, handoffs under 45 minutes, games that moved or vanished from the feed, crossed-out paper entries still on Google, practices during school breaks, unknown abbreviations, and a reminder when the kitchen photo is stale." },
+            { label: "🔎 Call-outs", detail: "Double-bookings, handoffs under 45 minutes, games that moved or vanished from the feed, crossed-out paper entries still on Google, practices during school breaks, what to wear or bring from school flyers, unknown abbreviations, and a reminder when the kitchen photo is stale." },
             { label: "📅 This week", detail: "Day by day. Anything not yet on Google has a ➕ Add link that opens a pre-filled event." },
             { label: "👀 Next week & further out", detail: "Next week in full, then breaks and midterms up to five weeks ahead." },
             { label: "Source footer", detail: "Which sources were read and how fresh each one is." },
           ],
+        },
+        {
+          heading: "A real Sunday briefing",
+          paragraphs: [
+            "This is the email that landed in both our inboxes on Sunday, November 8 at 8:16 AM. The subject line already does the triage: \"Week Ahead: Nov 8 – Nov 14 · 3 to add.\" Before opening it, we know how much is waiting on us.",
+          ],
+          image: {
+            src: "/images/family-week-ahead-email.png",
+            alt: "The Week Ahead email for Nov 8 to Nov 14, with names and places blurred. It lists call-outs (two practice overlaps, a party that disappeared from Google, midterms and Thanksgiving break missing from Google, a league feed that failed to load, and a stale kitchen calendar photo), then the week day by day with Add links, next week, and further out.",
+            width: 2032,
+            height: 1425,
+            caption: "The briefing from Sunday, Nov 8. Names, schools, and locations are blurred; the sender header is cropped.",
+          },
+          items: [
+            { label: "Conflicts before they become scrambles", detail: "Two kids' activities overlap on both Tuesday and Thursday, and the agent noticed the same pattern repeats next week. That turned a midweek scramble into a Sunday conversation about who drives where." },
+            { label: "Changes no one would have spotted", detail: "Last week a party on the kitchen calendar matched a Google event. That event has since been deleted, so the party is no longer on the shared calendar. Only a tool that remembers last week's state can catch something that quietly vanished." },
+            { label: "Gaps closed in one tap", detail: "A week of midterms and Thanksgiving break were nowhere on Google. Each gets a ➕ Add link, so fixing the gap takes one tap, not retyping." },
+            { label: "Questions worth asking", detail: "Practices are still scheduled during Thanksgiving break. The agent states the fact without guessing, and we decide whether to ask the coach." },
+            { label: "Honest about its blind spots", detail: "The league feeds had failed to load for the third week in a row, and the kitchen photo was 16 days old. A briefing that says what it couldn't check is one we can trust. That call-out led me to the cause: the cloud agent's network allowlist was blocking the league's calendar feed. I added the domain, and twelve minutes after this email a short follow-up went out with four Saturday games that weren't on Google." },
+          ],
+          calloutLabel: "Why it matters",
+          callout:
+            "The value isn't the list of events. It's the five-minute Sunday read that replaces cross-checking a wall calendar, two league sites, ClassDojo, and a pile of school emails, and the decisions we get to make before the week starts instead of in the middle of it.",
         },
         {
           heading: "Key decisions",
@@ -215,12 +240,16 @@ export const projects: Project[] = [
             { label: "Refine the prompt", detail: "Tested on two months of real calendar. It treated crossed-out entries as removed and matched differently worded duplicates across sources." },
             { label: "Validate every input by hand", detail: "Each source got a manual test before anything was scheduled. Two failed (Gmail attachments, images inside PDFs), and both changed the design." },
             { label: "Iterate with the real readers", detail: "Five test sends in one evening, each changed by feedback: invisible buttons became plain links, helper suggestions were cut, and the agent now re-checks the calendar right before sending." },
-            { label: "Run it live", detail: "A scheduled Sunday-morning cloud routine with a private config and a weekly state file. Next: two weeks of live runs, measuring the items it catches that we would have missed." },
+            { label: "Run it live", detail: "A scheduled Sunday-morning cloud routine with a private config and a weekly state file. The first live briefing went out Sunday, October 25, and it has run every Sunday since." },
           ],
         },
         {
-          heading: "Early results",
+          heading: "Results so far",
           items: [
+            { label: "3 Sundays live", detail: "Oct 25, Nov 1, and Nov 8 briefings, each in both our inboxes on Sunday morning with no manual step." },
+            { label: "19 items", detail: "flagged as missing from the shared calendar across those three weeks (2, 10, and 3, plus 4 in a follow-up), each with a one-tap Add link." },
+            { label: "Conflicts every week", detail: "Two games at different sites overlapping by five minutes, a 30-minute dentist-to-practice handoff, and soccer overlapping basketball practice twice a week." },
+            { label: "4 games", detail: "missing from Google were caught the same morning the league feeds came back after three weeks of failed fetches." },
             { label: "10 of 12", detail: "proposed events were added to the calendar straight from the first test email." },
             { label: "8 games", detail: "missing from Google were found in the league feed on the first manual check, including one that overlapped a party." },
             { label: "5 versions", detail: "of the briefing in one evening, each driven by a concrete reaction from its actual reader." },
@@ -233,6 +262,7 @@ export const projects: Project[] = [
             { label: "Validate inputs before automating", detail: "Testing every source by hand surfaced two failures before they could become production bugs." },
             { label: "The best integration is sometimes a habit", detail: "One capture rule beat four app integrations." },
             { label: "Keep humans in the loop where trust is fragile", detail: "A shared family calendar is high-trust, so proposals beat automation there." },
+            { label: "Make failures loud", detail: "When the league feeds were blocked, the briefing said so every week instead of quietly skipping them. The cause turned out to be a one-line fix (allowlisting the feed's domain in the agent's network settings), and the first good fetch found four games we would have missed." },
             { label: "Cut what doesn't work quickly", detail: "An iOS share-sheet shortcut hit a platform wall, so it's parked. A slightly clunkier path that works beats a slick one that doesn't." },
           ],
         },
