@@ -145,8 +145,32 @@ export type Project = {
   caseStudy: {
     lede: string;
     facts: { label: string; value: string }[];
+    /** Optional exec-summary layout. When present, the page leads with it and the sections collapse into "The full story". */
+    brief?: CaseStudyBrief;
     sections: CaseStudySection[];
   };
+};
+
+export type CaseStudyBrief = {
+  /** One sentence: the value, in plain words. */
+  headline: string;
+  stats: { value: string; label: string }[];
+  problem: string;
+  solution: string;
+  impact: string;
+  /** Left-to-right steps for the "How it works" diagram. */
+  flow?: { label: string; detail: string }[];
+  /** Index into sections whose image is shown in the brief. */
+  showcaseImageFrom?: number;
+  /** A screenshot shown in the brief, edge to edge. Takes precedence over showcaseImageFrom. */
+  image?: { src: string; alt: string; width: number; height: number; caption?: string; heading?: string };
+  shift?: { title: string; rows: { before: string; after: string }[] };
+  /** Horizontal bar chart, e.g. assessment scores. */
+  bars?: { title: string; max: number; rows: { label: string; value: number; note: string }[] };
+  highlights?: { title: string; detail: string }[];
+  /** Defaults to "How I worked". */
+  highlightsTitle?: string;
+  skills: string[];
 };
 
 export const projects: Project[] = [
@@ -169,6 +193,43 @@ export const projects: Project[] = [
         { label: "Built with", value: "Claude scheduled agent · Google Calendar, Gmail & Drive · iCal feeds" },
         { label: "Status", value: "Live since Oct 25, 2026 · runs every Sunday morning" },
       ],
+      brief: {
+        headline:
+          "Five scattered family schedule sources, reconciled into one five-minute Sunday read. Discovery showed the real problem before I built anything.",
+        stats: [
+          { value: "5+", label: "schedule sources reconciled into one email" },
+          { value: "5 min", label: "Sunday read replaces cross-checking every source" },
+          { value: "1 tap", label: "to add anything missing to the shared calendar" },
+          { value: "5", label: "versions in one evening, driven by ~~user~~ my wife's feedback" },
+        ],
+        problem:
+          "Schedule info arrives through five or more channels (a paper calendar, league sites, ClassDojo, school emails, GroupMe) and nobody compares them. Things slip because nobody compared notes.",
+        solution:
+          "A scheduled AI agent reads every source, checks it against our shared Google calendar, and emails us both a briefing. It proposes; we decide with one tap.",
+        impact:
+          "Conflicts surface on Sunday instead of midweek. Gaps get closed in one tap. When a source fails, the briefing says so, and that led to four recovered games.",
+        flow: [
+          { label: "5+ sources", detail: "Paper calendar, league feeds, ClassDojo, email, GroupMe" },
+          { label: "AI agent", detail: "Compares against the shared calendar and last week's state" },
+          { label: "Sunday briefing", detail: "Conflicts, gaps, and changes in one email" },
+          { label: "We decide", detail: "One tap adds an event. Nothing is written automatically." },
+        ],
+        showcaseImageFrom: 2,
+        shift: {
+          title: "What discovery changed",
+          rows: [
+            { before: "The gap is paper → digital", after: "The gap is five or more sources that never get cross-checked" },
+            { before: "It's my problem", after: "We both miss things: spirit days, tests, schedule changes" },
+            { before: "Sync events automatically", after: "We want to review before anything lands on the shared calendar" },
+          ],
+        },
+        highlights: [
+          { title: "Discovery before building", detail: "Interviewing my other user and looking at real data reframed the problem. The v1 plan was a well-built answer to the wrong question." },
+          { title: "Humans in the loop", detail: "A shared family calendar is high-trust, so the agent proposes and we accept. A bad read never lands on the calendar." },
+          { title: "Make failures loud", detail: "The briefing flagged a broken league feed every week. The fix was one line, and the first good fetch found four missing games." },
+        ],
+        skills: ["User research", "Problem framing", "Rapid iteration", "AI agent design", "Human-in-the-loop", "Privacy by design"],
+      },
       sections: [
         {
           heading: "The problem, twice",
@@ -251,15 +312,12 @@ export const projects: Project[] = [
           ],
         },
         {
-          heading: "Results so far",
+          heading: "Results",
           items: [
-            { label: "3 Sundays live", detail: "Oct 25, Nov 1, and Nov 8 briefings, each in both our inboxes on Sunday morning with no manual step." },
-            { label: "19 items", detail: "flagged as missing from the shared calendar across those three weeks (2, 10, and 3, plus 4 in a follow-up), each with a one-tap Add link." },
-            { label: "Conflicts every week", detail: "Two games at different sites overlapping by five minutes, a 30-minute dentist-to-practice handoff, and soccer overlapping basketball practice twice a week." },
-            { label: "4 games", detail: "missing from Google were caught the same morning the league feeds came back after three weeks of failed fetches." },
-            { label: "10 of 12", detail: "proposed events were added to the calendar straight from the first test email." },
-            { label: "8 games", detail: "missing from Google were found in the league feed on the first manual check, including one that overlapped a party." },
-            { label: "5 versions", detail: "of the briefing in one evening, each driven by a concrete reaction from its actual reader." },
+            { label: "Hands-off every Sunday", detail: "The briefing lands in both our inboxes Sunday morning with no manual step. The only work left is deciding what to add." },
+            { label: "Conflicts caught before the week starts", detail: "Early briefings flagged two games at different sites overlapping by five minutes, a 30-minute dentist-to-practice handoff, and soccer overlapping basketball practice twice a week." },
+            { label: "Gaps found on day one", detail: "The first manual check of the league feed turned up 8 games missing from Google, including one that overlapped a party." },
+            { label: "A loud failure that paid off", detail: "After three weeks of the briefing flagging a broken league feed, a one-line fix brought it back, and that same morning it caught 4 games missing from Google." },
           ],
         },
         {
@@ -295,6 +353,41 @@ export const projects: Project[] = [
         { label: "Built with", value: "Claude Code · Next.js · Tailwind CSS · Vercel" },
         { label: "Status", value: "Full site live; shop soft-opens November 2026" },
       ],
+      brief: {
+        headline:
+          "A friend's golf fitting shop, online two months before opening day. The site gave him credibility with manufacturers like Mizuno and TaylorMade before the doors opened.",
+        stats: [
+          { value: "2 months", label: "online before the shop opened its doors" },
+          { value: "5 pages", label: "full site with services, pricing, and a Founders Club offer" },
+          { value: "Mizuno, TaylorMade", label: "among the manufacturers he pitched with the site behind him" },
+        ],
+        problem:
+          "He was opening his own shop and stuck standing up a site himself. With no storefront yet, he needed to look real to customers and to the brands he wanted to carry.",
+        solution:
+          "He owned the design and content; I owned the build and launch. A coming-soon page went live first, with the full site built underneath and switched on ahead of opening.",
+        impact:
+          "He told me the site helped him move quicker with manufacturers, and golfers could find the shop and ask about the Founders Club before opening day.",
+        flow: [
+          { label: "His direction", detail: "Design, layout, and content decided by the owner" },
+          { label: "My build", detail: "Next.js site, domain, search setup, link previews, analytics" },
+          { label: "Coming-soon page", detail: "Live two months early, so the shop was findable" },
+          { label: "Full site", detail: "Services and pricing switched on ahead of opening" },
+        ],
+        image: {
+          src: "/images/mj-custom-clubs-home.jpg",
+          alt: "The MJ Custom Clubs homepage: a dark, neon pink and cyan design with the MJ logo, a Founders Club Now Enrolling badge, the headline Fit it. Build it. Play it., and Book a Fitting and Explore Services buttons.",
+          width: 1920,
+          height: 1200,
+          heading: "The live site",
+          caption: "The homepage at mjcustomclubs.com. Design and content by the owner; build and launch by me.",
+        },
+        highlights: [
+          { title: "Clear lines of ownership", detail: "He decided how the business should look and sound. I turned that into a working site. He never had to think about code, and I never had to guess at his brand." },
+          { title: "Ship something useful early", detail: "The coming-soon page went live first and started working for him while the full site was still being built." },
+          { title: "A handoff he can run", detail: "A plain-language README maps \"what you want to change\" to the file it lives in, with how to preview a change and roll back a bad deploy." },
+        ],
+        skills: ["Stakeholder management", "Clear ownership", "Launch planning", "Next.js & Vercel", "Search & analytics setup", "Documentation & handoff"],
+      },
       sections: [
         {
           heading: "The ask",
@@ -363,6 +456,46 @@ export const projects: Project[] = [
         { label: "Built with", value: "Claude · React · GitHub Pages" },
         { label: "Based on", value: "My Kolbe A Index and DISC assessment results" },
       ],
+      brief: {
+        headline:
+          "A user manual for working with me, built from my Kolbe A and DISC results: how I work, where I have blind spots, and what I do about each.",
+        stats: [
+          { value: "8", label: "Kolbe Follow Thru, my strongest mode: systems and seeing things through" },
+          { value: "S", label: "DISC Supporter: steady, consistent, and a close listener" },
+          { value: "0", label: "lines of code written by hand. Built entirely through conversation with Claude." },
+        ],
+        problem:
+          "Self-awareness is easy to claim in an interview and hard to show. New teammates usually learn how someone works the slow way.",
+        solution:
+          "A published manual from my assessment results, with tabs for projects, feedback, disagreement, and meetings, plus a decoder for what my behaviors actually mean.",
+        impact:
+          "Anyone deciding whether to work with me gets the shortcut. The repo shares the starting prompt, so anyone can build their own.",
+        bars: {
+          title: "My Kolbe A results",
+          max: 10,
+          rows: [
+            { label: "Follow Thru", value: 8, note: "Builds systems, establishes order, sees things through" },
+            { label: "Fact Finder", value: 7, note: "Gathers context before acting, to move with confidence" },
+            { label: "Implementor", value: 3, note: "Works in ideas and frameworks, not physical prototypes" },
+            { label: "Quick Start", value: 2, note: "Prefers a plan over a pivot" },
+          ],
+        },
+        image: {
+          src: "/images/travis-101-cover.jpg",
+          alt: "The Travis 101 cover: a deep blue page with the name Travis in large serif type, the line Fact Finder. Follow-Thru. Supporter. A field guide to working with Travis., a Begin button, and a note that it's a 3 minute read.",
+          width: 1920,
+          height: 1200,
+          heading: "The live guide",
+          caption: "The cover of Travis 101. It's a three-minute, slide-style read.",
+        },
+        highlightsTitle: "Inside the manual",
+        highlights: [
+          { title: "Blind spots, with antidotes", detail: "I can overcommit to keep things smooth, so I say \"let me check what I'm already carrying.\" I can over-research, so I set a \"good enough to move\" bar before starting." },
+          { title: "The Decoder", detail: "Quiet in a meeting means I'm processing, not checked out. The real thinking comes out in a 1:1 afterward." },
+          { title: "Send me pre-reads", detail: "I'll arrive having done the homework. Give me a complex, under-documented problem and I'll build the system that solves it." },
+        ],
+        skills: ["Self-awareness", "Clear communication", "AI-assisted development", "Prompt design", "Publishing on GitHub Pages"],
+      },
       sections: [
         {
           heading: "My results",
@@ -421,6 +554,34 @@ export const projects: Project[] = [
         { label: "Built with", value: "Claude Code · Next.js · TypeScript · Tailwind CSS v4 · Vercel" },
         { label: "Status", value: "Live, deployed on every push" },
       ],
+      brief: {
+        headline:
+          "The site you're on is part of the pitch: I planned it, directed Claude Code to build it, and every push ships to Vercel.",
+        stats: [
+          { value: "1", label: "data file drives every page, including these case studies" },
+          { value: "Every push", label: "deploys to production automatically" },
+          { value: "2", label: "themes, light and dark, following your system setting" },
+          { value: "3", label: "holes in a hidden putting game. Tap the green." },
+        ],
+        problem:
+          "A resume can list AI tools, but it can't show how I actually use them, or that I can take something from idea to live.",
+        solution:
+          "I planned the content and structure, then directed Claude Code from scaffold to deploy, reviewing every step. Version-controlled on GitHub, hosted on Vercel.",
+        impact:
+          "A live, public example of using AI as leverage, not autopilot, with the source open for anyone to inspect.",
+        flow: [
+          { label: "I plan", detail: "Content, structure, and what each page should prove" },
+          { label: "Claude Code builds", detail: "Next.js, TypeScript, and Tailwind CSS, step by step" },
+          { label: "I review", detail: "Every change previewed locally before it ships" },
+          { label: "Vercel ships", detail: "A push to GitHub deploys to production" },
+        ],
+        highlights: [
+          { title: "Leverage, not autopilot", detail: "Claude Code wrote the code. I set the direction, reviewed every step, and decided what shipped." },
+          { title: "Content as data", detail: "Nearly all copy lives in one file, so updating a role or a case study is an edit, not a rebuild." },
+          { title: "Details that respect the reader", detail: "Light and dark themes, a mobile-first menu, and a putting game whose code only downloads when someone opens it." },
+        ],
+        skills: ["Product ownership", "AI-assisted development", "Next.js & TypeScript", "Tailwind CSS", "Git & GitHub", "CI/CD on Vercel"],
+      },
       sections: [
         {
           heading: "The approach",
