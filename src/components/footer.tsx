@@ -11,7 +11,7 @@ export function Footer() {
           Contact
         </h2>
         <h3 className="mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
-          Let&apos;s talk about how I can help your product team.
+          Let&apos;s talk product, golf, or building with AI.
         </h3>
         <div className="mt-6 flex flex-wrap gap-3">
           <a
