@@ -35,4 +35,4 @@ This is Travis Frye's job-search portfolio. The readers are hiring managers and 
 - Verify with `npx next build`. It also generates the route types (`PageProps`, `LayoutProps`) that a bare `tsc` needs.
 - `npm run lint` should pass clean; keep it that way.
 - Social preview cards (LinkedIn, Slack) are generated from `src/lib/og-card.tsx` for the home page and each case study. `src/app/sitemap.ts` and `src/app/robots.ts` list pages for search engines; new projects are picked up automatically. If the domain changes, update `siteUrl`, the domain text in `og-card.tsx`, and the README.
-- The repo sits in an iCloud-synced folder. If `next dev`, `tsc`, or `next build` hangs with no output, files have likely been offloaded: check with `find node_modules -flags +dataless`, and fix with `rm -rf .next node_modules && npm install`.
+- The repo lives in `~/Developer`, outside iCloud, so iCloud offloading files and making "name 2" sync copies is no longer a concern. GitHub is the backup; `Headshot.png` and the resume source PDF are gitignored, so keep their originals elsewhere. Don't move the repo back into iCloud Drive.
