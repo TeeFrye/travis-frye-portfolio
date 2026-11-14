@@ -163,7 +163,22 @@ export type CaseStudyBrief = {
   /** Index into sections whose image is shown in the brief. */
   showcaseImageFrom?: number;
   /** A screenshot shown in the brief, edge to edge. Takes precedence over showcaseImageFrom. */
-  image?: { src: string; alt: string; width: number; height: number; caption?: string; heading?: string };
+  image?: {
+    src: string;
+    /** Optional version shown in dark mode. */
+    darkSrc?: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption?: string;
+    heading?: string;
+    /** No border or rounded box, for transparent images. */
+    frameless?: boolean;
+    /** Next.js image quality (75 or 90). */
+    quality?: number;
+  };
+  /** A live, embedded version of the project, shown after the image on wide screens. */
+  demo?: { src: string; title: string; heading: string; body: string };
   shift?: { title: string; rows: { before: string; after: string }[] };
   /** Horizontal bar chart, e.g. assessment scores. */
   bars?: { title: string; max: number; rows: { label: string; value: number; note: string }[] };
@@ -576,12 +591,21 @@ export const projects: Project[] = [
           { label: "Run it", detail: "A sideline timer with cues, whistle beeps, and the screen kept awake" },
         ],
         image: {
-          src: "/images/hoops-index-screens.jpg",
-          alt: "Four phone screens from Hoops Index in crimson and cream: the Drills screen with focus areas shown as hanging banners, the Build a Practice sheet with length, players, age group, skill level, and focus options, a generated one-hour Handles + Shooting plan with seven timed blocks, and Practice Mode showing a 7:00 timer with coaching cues and the next drill.",
-          width: 2432,
-          height: 1297,
+          src: "/images/hoops-index-screens-light.png",
+          darkSrc: "/images/hoops-index-screens-dark.png",
+          alt: "Four phone screens from Hoops Index: the Drills screen with focus areas as hanging banners, the Build a Practice sheet, a one-hour Handles + Shooting plan, and Practice Mode with the timer running.",
+          width: 2938,
+          height: 1468,
+          quality: 90,
+          frameless: true,
           heading: "The app",
           caption: "Browse drills, build a practice, adjust the plan, and run it with the sideline timer.",
+        },
+        demo: {
+          src: "https://teefrye.github.io/hoops-index-drill-library/?embed",
+          title: "Hoops Index app, live demo",
+          heading: "The real app, running live",
+          body: "Tap a focus banner, open a drill, or go to Practices and press play. It's the same app I run practices with.",
         },
         shift: {
           title: "What changed from v1 to v2",

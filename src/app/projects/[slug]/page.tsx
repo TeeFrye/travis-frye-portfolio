@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { LiveDemo } from "@/components/live-demo";
 import { projects, type CaseStudyBrief, type CaseStudySection, type Project } from "@/lib/data";
 
 export const dynamicParams = false;
@@ -296,23 +297,49 @@ function BriefArticle({ project, brief }: { project: Project; brief: CaseStudyBr
           <Eyebrow>{showcaseHeading}</Eyebrow>
           <figure className="mt-5">
             <div
-              className={`overflow-hidden rounded-2xl border border-border shadow-sm ${
-                bleed ? "" : "bg-white p-3 sm:p-5"
-              }`}
+              className={
+                brief.image?.frameless
+                  ? ""
+                  : `overflow-hidden rounded-2xl border border-border shadow-sm ${bleed ? "" : "bg-white p-3 sm:p-5"}`
+              }
             >
               <Image
                 src={showcase.src}
                 alt={showcase.alt}
                 width={showcase.width}
                 height={showcase.height}
+                quality={brief.image?.quality}
                 sizes="(min-width: 1024px) 848px, 100vw"
-                className="h-auto w-full"
+                className={`h-auto w-full ${brief.image?.darkSrc ? "dark:hidden" : ""}`}
               />
+              {brief.image?.darkSrc && (
+                <Image
+                  src={brief.image.darkSrc}
+                  alt={showcase.alt}
+                  width={showcase.width}
+                  height={showcase.height}
+                  quality={brief.image.quality}
+                  sizes="(min-width: 1024px) 848px, 100vw"
+                  className="hidden h-auto w-full dark:block"
+                />
+              )}
             </div>
             {showcase.caption && (
               <figcaption className="mt-3 text-center text-xs text-muted">{showcase.caption}</figcaption>
             )}
           </figure>
+        </section>
+      )}
+
+      {/* Live demo (wide screens only; phones use the project link) */}
+      {brief.demo && (
+        <section className="mt-14 hidden md:grid md:grid-cols-[1fr_auto] md:items-center md:gap-12">
+          <div>
+            <Eyebrow>Try it here</Eyebrow>
+            <h3 className="mt-3 text-2xl font-semibold tracking-tight">{brief.demo.heading}</h3>
+            <p className="mt-3 leading-relaxed text-muted">{brief.demo.body}</p>
+          </div>
+          <LiveDemo src={brief.demo.src} title={brief.demo.title} />
         </section>
       )}
 
