@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { HomeLink } from "./home-link";
 import { MobileMenu } from "./mobile-menu";
 import { PlayGolfButton, PuttingGameHost } from "./putting-green";
 import { ThemeToggle } from "./theme-toggle";
@@ -15,9 +15,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/#top" className="text-sm font-semibold tracking-tight">
-          Travis Frye
-        </Link>
+        <HomeLink className="text-sm font-semibold tracking-tight">Travis Frye</HomeLink>
         <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           {links.map((link) => (
             <a
