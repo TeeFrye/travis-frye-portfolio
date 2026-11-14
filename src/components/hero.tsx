@@ -14,21 +14,15 @@ export function Hero() {
             {profile.name}
           </h1>
           <p className="mt-4 text-lg text-muted">{profile.tagline}</p>
-          <div className="mt-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-muted">
-              Industries I&apos;ve delivered in
-            </p>
-            <ul className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
-              {profile.industries.map((industry) => (
-                <li
-                  key={industry}
-                  className="rounded-full border border-border bg-surface px-3 py-1 text-xs text-foreground/80"
-                >
-                  {industry}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="mt-8 grid gap-3 text-left sm:grid-cols-3">
+            {profile.proof.map((item) => (
+              <li key={item.value} className="rounded-xl border border-border bg-surface px-4 py-3">
+                <p className="text-2xl font-semibold tracking-tight text-accent">{item.value}</p>
+                <p className="mt-1 text-xs leading-snug text-foreground/80">{item.label}</p>
+                <p className="mt-1.5 text-[11px] text-muted">{item.source}</p>
+              </li>
+            ))}
+          </ul>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:justify-start">
             <a
               href={profile.resumeUrl}

@@ -3,13 +3,18 @@ export const siteUrl = "https://www.travisfrye.dev";
 
 export const profile = {
   name: "Travis Frye",
-  tagline: "Product and program leader who gets up to speed fast in new domains, clears the path for teams, and turns complex work into results leadership can see.",
-  eyebrow: "Product · Program · Delivery",
+  tagline: "Product manager with 10+ years shipping software. I turn messy problems into products customers actually use, and I bring the numbers to prove it.",
+  eyebrow: "Product Manager",
   location: "Indianapolis, IN",
   email: "travisfrye317@gmail.com",
   linkedin: "https://www.linkedin.com/in/travfrye/",
   resumeUrl: "/TravisFryeResume.pdf",
-  industries: ["Auto & Disability Insurance", "Optometry Operations", "Health Analytics", "Specialty Care", "Event Tech", "AgTech"],
+  /** Proof points shown under the intro. Keep them to fixed, verifiable results. */
+  proof: [
+    { value: "$1M+", label: "new enterprise revenue from privacy and compliance settings", source: "Cisco Webex Events" },
+    { value: "94%", label: "adoption of AI captions and translations in 6 months", source: "Cisco Webex Events" },
+    { value: "50%", label: "faster release communications", source: "Lantern" },
+  ],
   bio: [
     "I've spent over a decade in product, program, and project roles, and the thread through all of it is delivery: turning messy, ambiguous problems into shipped work and making sure teams have what they need to move fast.",
     "I started out adjusting auto and disability insurance claims, and I've since delivered in optometry operations, health analytics, specialty care, live events, and now agtech at IntelinAir. Every move meant learning a new domain quickly. I dig into the customer, the data, and the people who know the space, and I get productive fast. A new industry doesn't slow me down.",

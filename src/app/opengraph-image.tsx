@@ -9,6 +9,6 @@ export default function Image() {
   return renderOgCard({
     eyebrow: profile.eyebrow,
     title: profile.name,
-    body: "Product and program leader who learns new domains fast, clears the path for teams, and delivers results.",
+    body: "Product manager with 10+ years shipping software. I turn messy problems into products customers actually use.",
   });
 }

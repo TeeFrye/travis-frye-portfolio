@@ -17,12 +17,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Travis Frye — Product & Program Manager",
   description:
-    "Travis Frye is a product and program leader who learns new domains fast, clears the path for teams, and delivers results. Portfolio and resume.",
+    "Travis Frye is a product manager with 10+ years shipping software. Case studies, results, and resume.",
   metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Travis Frye — Product & Program Manager",
     description:
-      "Product and program leader who learns new domains fast, clears the path for teams, and delivers results.",
+      "Product manager with 10+ years shipping software. I turn messy problems into products customers actually use.",
     type: "website",
   },
 };
