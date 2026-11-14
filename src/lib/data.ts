@@ -537,6 +537,125 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "hoops-index",
+    title: "Hoops Index",
+    tag: "Personal Project · Mobile App",
+    summary:
+      "A free youth basketball app I built for my own coaching: 116 drills, a practice plan builder, and a sideline timer. It installs on any phone, works with no signal, and needs no account. It turns the 15 minutes before practice into a plan instead of a scramble.",
+    shareSummary:
+      "A free youth basketball app for coaches: 116 drills, a practice builder, and a sideline timer. Works offline, no account.",
+    url: "https://teefrye.github.io/hoops-index-drill-library/",
+    linkLabel: "Open the app",
+    caseStudy: {
+      lede:
+        "I coach youth basketball while working a full-time job. Often I get to the gym with 15 minutes or less to plan an hour of practice, without knowing if 8 kids or 12 will show up. Hoops Index is the tool I wanted on the sideline: pick a length, a roster, an age group, and a focus, get a full practice, then run it from my phone.",
+      facts: [
+        { label: "Role", value: "Product owner, user, and builder" },
+        { label: "Timeline", value: "v1 March 2026 · v2 November 2026" },
+        { label: "Built with", value: "Claude Code · React · TypeScript · Vite · PWA · GitHub Pages" },
+        { label: "Status", value: "Live and free; I use it at my own practices" },
+      ],
+      brief: {
+        headline:
+          "A youth basketball practice, planned in the gym and run from a phone. Built for the sideline, not the desk.",
+        stats: [
+          { value: "116", label: "original drills across 10 focus areas" },
+          { value: "4 inputs", label: "length, roster, age, and focus build a full practice" },
+          { value: "0", label: "accounts or signal needed; it installs and works offline" },
+        ],
+        problem:
+          "Good drills are scattered across YouTube, coaching sites, and old notebooks. Finding the right ones for today's age group and headcount, with minutes to spare, doesn't happen in a gym parking lot.",
+        solution:
+          "One phone app: a filterable drill library, a builder that turns four choices into a full practice, and a timer that runs the plan drill by drill with coaching cues on screen.",
+        impact:
+          "I walk in with a plan in a couple of taps, adjust it to whoever shows up, and run practice from the phone in my hand instead of a notebook.",
+        flow: [
+          { label: "Set the practice", detail: "Length, number of players, age group, skill level, and up to 3 focus areas" },
+          { label: "Get a plan", detail: "Warm-up, skill blocks, water breaks, and a competitive finisher" },
+          { label: "Adjust", detail: "Reorder, retime, swap, or shuffle drills for who actually showed up" },
+          { label: "Run it", detail: "A sideline timer with cues, whistle beeps, and the screen kept awake" },
+        ],
+        image: {
+          src: "/images/hoops-index-screens.jpg",
+          alt: "Four phone screens from Hoops Index in crimson and cream: the Drills screen with focus areas shown as hanging banners, the Build a Practice sheet with length, players, age group, skill level, and focus options, a generated one-hour Handles + Shooting plan with seven timed blocks, and Practice Mode showing a 7:00 timer with coaching cues and the next drill.",
+          width: 2432,
+          height: 1297,
+          heading: "The app",
+          caption: "Browse drills, build a practice, adjust the plan, and run it with the sideline timer.",
+        },
+        shift: {
+          title: "What changed from v1 to v2",
+          rows: [
+            { before: "A list of drills to search", after: "A practice plan to run: the plan is the product, the drills feed it" },
+            { before: "An AI drill generator in the browser", after: "A rules-based plan builder that works offline; AI parked until it can run safely on a server" },
+            { before: "A web page you look things up on", after: "An app on the home screen that works with no signal in the gym" },
+            { before: "47 drills, some adapted from coaching sites", after: "116 drills, every write-up original" },
+          ],
+        },
+        highlights: [
+          { title: "Build for the real moment", detail: "The user is a coach with minutes to spare and a phone in one hand. Big tap targets, one-handed navigation, and a timer that keeps the screen awake came from that, not from a feature list." },
+          { title: "Right tool, not the newest one", detail: "A practice plan follows rules a coach already knows: warm up, rotate skills, water breaks, finish competitive. Plain code does that instantly and offline. AI comes back when it has a safe home on a server." },
+          { title: "Make it easy to keep growing", detail: "New drills go in through a validation script that checks every field and skips duplicates, so the library can grow without breaking the app." },
+        ],
+        skills: ["Problem framing", "Scope decisions", "Mobile-first design", "AI-assisted development", "React & TypeScript", "Offline web apps (PWA)"],
+      },
+      sections: [
+        {
+          heading: "The problem",
+          paragraphs: [
+            "Coaching youth basketball while working full time is a scheduling puzzle that never fully resolves. I often have 15 minutes before practice, sometimes less, to fill an hour or more with drills that fit the age group, can be taught in the time I have, and work whether 8 kids show up or 12.",
+            "The drills exist. They're scattered across YouTube videos, coaching websites, old notebooks, and things half-remembered from a clinic years ago. What was missing was a way to find the right ones fast and turn them into a plan.",
+          ],
+          callout:
+            "A volunteer coach needs a complete, age-appropriate practice plan in minutes, on a phone, often with no signal, and has to adjust it once they see who showed up.",
+        },
+        {
+          heading: "v1: a searchable drill list",
+          paragraphs: [
+            "The first version (March 2026) was a single web page: 47 drills I could filter by focus, age group, skill level, and player count, plus favorites and an AI button that asked Claude to write a new drill.",
+            "That solved the wrong half of the problem. Finding a drill got faster, but I still had to assemble the practice myself, keep time, and remember what came next. The AI drill generator was fun, but more drills wasn't my problem. And because it called the AI service straight from the browser, it couldn't be shared publicly without exposing a private key.",
+          ],
+        },
+        {
+          heading: "v2: a practice in your pocket",
+          paragraphs: [
+            "In November 2026 I rebuilt it as an installable phone app, directing Claude Code through a series of small, focused changes and reviewing each one before it shipped.",
+          ],
+          items: [
+            { label: "Practice builder", detail: "Pick a length (30 to 120 minutes), players, age group, skill level, and up to three focus areas. It returns a full plan: a warm-up, skill blocks that rotate through the focus areas, water breaks about every 25 minutes, and a competitive team drill to finish." },
+            { label: "Adjust for who showed up", detail: "Reorder, retime, add, remove, or shuffle drills. Each block shows its clock time so I know where practice should be." },
+            { label: "Practice Mode", detail: "A sideline timer that runs the plan drill by drill: coaching cues on screen, whistle beeps, +1 minute when a drill is working, and the screen kept awake." },
+            { label: "116 original drills", detail: "Across 10 focus areas, from warm-ups to team concepts, each with setup, steps, cues, and variations. Classic drill concepts are common coaching knowledge, but every write-up is written for this app." },
+            { label: "Works like a real app", detail: "Installs to the home screen, works offline, keeps favorites, notes, and plans on the device with no account, and shares a plan as text with assistant coaches." },
+          ],
+        },
+        {
+          heading: "Key decisions",
+          table: {
+            columns: ["Decision", "Why"],
+            rows: [
+              ["The plan is the product", "Coaches don't need more drills; they need the next hour figured out. The library now feeds the builder instead of being the destination."],
+              ["Rules over AI for planning", "Practice structure follows known rules. Plain code is instant, free, predictable, and works with no signal."],
+              ["Park the AI generator", "A public app can't hold a private key in the browser. It returns once it can run behind a small server."],
+              ["Installable web app, not an app store app", "One codebase on every phone, free to host, and no app review to wait on. App store versions stay on the roadmap."],
+              ["No accounts, data stays on the device", "Nothing to sign up for, nothing to secure, and nothing about kids or teams leaves the phone. Backup and restore covers switching phones."],
+              ["Original write-ups only", "v1 leaned on coaching sites. v2 rewrote every drill so the library is mine to share."],
+            ],
+          },
+        },
+        {
+          heading: "What's next",
+          items: [
+            { label: "Court diagrams", detail: "A simple diagram for each drill, since a picture beats a paragraph for young players." },
+            { label: "AI drill generator, done safely", detail: "Back behind a small server so the key stays private." },
+            { label: "Shared plans", detail: "Cloud sync so plans follow you across devices and assistant coaches see the same practice." },
+            { label: "App stores", detail: "Google Play first (low cost), then the App Store." },
+          ],
+        },
+      ],
+    },
+  },
+  {
     slug: "this-portfolio",
     title: "This Portfolio Site",
     tag: "Personal Project",
